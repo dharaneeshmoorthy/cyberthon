@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NCRP Complaint Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="chat-wrapper">
+
+    <!-- HEADER -->
+    <div class="chat-header">
+      <img src="https://www.cybercrime.gov.in/Cybercrime/assets/images/logo.png" alt="NCRP" onerror="this.style.display='none'"/>
+      <div class="header-info">
+        <h2>NCRP Complaint Assistant</h2>
+        <span class="status" id="statusDot">● Online</span>
+      </div>
+      <div class="header-controls">
+        <button id="langBtn"  class="ctrl-btn" title="Switch to Hindi">🇮🇳 हिंदी</button>
+        <button id="ttsBtn"   class="ctrl-btn active" title="Toggle Voice Readout">🔊</button>
+        <button id="themeBtn" class="ctrl-btn" title="Toggle Dark Mode">🌙</button>
+      </div>
+    </div>
+
+    <!-- PROGRESS BAR -->
+    <div class="progress-wrap">
+      <div class="progress-bar" id="progressBar" style="width:0%"></div>
+      <span class="progress-label" id="progressLabel">Step 0 / 12</span>
+    </div>
+
+    <!-- EMERGENCY BANNER -->
+    <div class="emergency-banner" id="emergencyBanner" style="display:none">
+      🚨 <strong>Immediate Financial Fraud?</strong> Call Cybercrime Helpline
+      <a href="tel:1930"><strong>1930</strong></a> right now!
+    </div>
+
+    <!-- CHAT BODY -->
+    <div class="chat-body" id="chatBody"></div>
+
+    <!-- QUICK REPLIES -->
+    <div class="quick-replies" id="quickReplies"></div>
+
+    <!-- IMAGE UPLOAD PREVIEW -->
+    <div id="imgPreviewBar" class="img-preview-bar" style="display:none">
+      <img id="imgPreviewThumb" src="" alt="preview"/>
+      <span id="imgPreviewName"></span>
+      <button id="imgPreviewRemove">✕</button>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="chat-footer">
+      <label class="upload-btn" title="Attach evidence image">
+        📎
+        <input type="file" id="imgUpload" accept="image/*" style="display:none"/>
+      </label>
+      <input type="text" id="userInput" placeholder="Type your response..." autocomplete="off"/>
+      <button id="micBtn" title="Voice Input">🎤</button>
+      <button id="sendBtn" title="Send">➤</button>
+    </div>
+    <div id="micStatus" class="mic-status"></div>
+
+    <!-- ACTION BAR -->
+    <div class="action-bar">
+      <button id="exportBtn" class="action-btn">📄 Export PDF</button>
+      <button id="resetBtn"  class="action-btn danger">🔄 Start Over</button>
+    </div>
+
+  </div>
+
+  <!-- HIDDEN PRINT AREA FOR PDF -->
+  <div id="printArea"></div>
+
+  <script src="chatbot.js"></script>
+</body>
+</html>
